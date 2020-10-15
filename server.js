@@ -26,6 +26,7 @@ app.listen(process.env.PORT|| 8080,()=>{
 
 app.post('/calculate',(req,res)=>{
 	array.push(req.body.calculation)
+	res.send(JSON.stringify(array));
 })
 
 app.get('/logs',(req,res)=>{
