@@ -1,6 +1,8 @@
 const express = require('express')
-const cors = require('cors')
 const app = express();
+const bodyParser = require('body-parser');
+const cors = require('cors');
+app.use(cors());
 
 var array = new Array()
 array.push = function (){
@@ -10,7 +12,7 @@ array.push = function (){
     return Array.prototype.push.apply(this,arguments);
 }
 
-app.use(cors())
+
 
 app.get('/',(req,res)=> {
 	res.send('this is working');
