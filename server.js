@@ -1,7 +1,9 @@
 const express = require('express')
-const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
+
+const app = express();
+
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -14,7 +16,7 @@ array.push = function (){
 }
 
 
-app.get('/',function(req,res)=> {
+app.get('/',(req,res)=> {
 	res.send('this is working');
 })
 app.listen(process.env.PORT|| 8080,()=>{
@@ -22,10 +24,10 @@ app.listen(process.env.PORT|| 8080,()=>{
 
 })
 
-app.post('/calculate',function(req,res)=>{
+app.post('/calculate',(req,res)=>{
 	array.push(req.body.calculation)
 })
 
-app.get('/logs',function(req,res)=>{
+app.get('/logs',(req,res)=>{
 	res.send(JSON.stringify(array));
 })
