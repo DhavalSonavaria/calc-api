@@ -13,7 +13,6 @@ array.push = function (){
 }
 
 
-
 app.get('/',(req,res)=> {
 	res.send('this is working');
 })
@@ -23,7 +22,7 @@ app.listen(process.env.PORT|| 8080,()=>{
 })
 
 app.post('/calculate',(req,res)=>{
-	array.push(req.body.calculation);
+	console.log(req)
 	res.send("5+5=10");
 })
 
