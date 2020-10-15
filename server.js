@@ -27,5 +27,5 @@ app.post('/calculate',function(req,res)=>{
 })
 
 app.get('/logs',function(req,res)=>{
-	res.send(array);
+	res.send(JSON.stringify(array));
 })
