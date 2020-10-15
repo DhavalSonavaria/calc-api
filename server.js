@@ -15,8 +15,8 @@ array.push = function (){
 app.get('/',(req,res)=> {
 	res.send('this is working');
 })
-app.listen(8080,()=>{
-	console.log('app is running');
+app.listen(process.env.PORT|| 8080,()=>{
+	console.log('app is running on port ${process.env.PORT}');
 
 })
 
