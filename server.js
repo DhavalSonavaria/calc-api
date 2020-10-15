@@ -22,7 +22,7 @@ app.listen(process.env.PORT|| 8080,()=>{
 })
 
 app.post('/calculate',(req,res)=>{
-	res.send(req.body);
+	res.send(req.body.calculation);
 })
 
 app.get('/logs',(req,res)=>{
