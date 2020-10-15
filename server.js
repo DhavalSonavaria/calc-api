@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 app.use(cors());
 app.use(bodyParser.json());
+
 var array = new Array()
 array.push = function (){
     if (this.length >= 10) {
@@ -13,7 +14,7 @@ array.push = function (){
 }
 
 
-app.get('/',(req,res)=> {
+app.get('/',function(req,res)=> {
 	res.send('this is working');
 })
 app.listen(process.env.PORT|| 8080,()=>{
@@ -21,10 +22,10 @@ app.listen(process.env.PORT|| 8080,()=>{
 
 })
 
-app.post('/calculate',(req,res)=>{
+app.post('/calculate',function(req,res)=>{
 	array.push(req.body.calculation)
 })
 
-app.get('/logs',(req,res)=>{
+app.get('/logs',function(req,res)=>{
 	res.send(array);
 })
