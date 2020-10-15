@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 app.use(cors());
-
+app.use(bodyParser.json());
 var array = new Array()
 array.push = function (){
     if (this.length >= 10) {
