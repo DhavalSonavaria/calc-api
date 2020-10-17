@@ -11,6 +11,11 @@ array.push = function (){
     return Array.prototype.push.apply(this,arguments);
 }
 
+app.get('/', (req, res) => {
+  res.send("Running");
+});
+
+
 io.on('connection',(socket)=>{
 	console.log('a user connected');
 });
