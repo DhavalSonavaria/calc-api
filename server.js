@@ -17,8 +17,13 @@ app.get('/', (req, res) => {
 
 
 io.on('connection',(socket)=>{
-	console.log('a user connected');
+	socket.on('calculation',(calc)=>{
+		array.push(calc);
+		io.emit('calculation',JSON.stringify(array));
+	})
 });
+
+
 
 http.listen(process.env.PORT, () => {
   console.log('listening on ${process.env.PORT}');
