@@ -17,6 +17,8 @@ app.get('/', (req, res) => {
 
 
 io.on('connection',(socket)=>{
+
+	socket.emit('connection',JSON.stringify(array))
 	socket.on('calculation',(calc)=>{
 		array.push(calc);
 		io.emit('calculation',JSON.stringify(array));
